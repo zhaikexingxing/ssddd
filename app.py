@@ -11,13 +11,13 @@ import csv, re, operator
 app = Flask(__name__)
 
 person = {
-    'first_name': '科',
-    'last_name' : '宋',
+    'first_name': '宋',
+    'last_name' : '科',
     'address' : '湖北师范大学黄石港区',
     'job': '学生',
     'tel': '13871876432',
     'email': '2677726932@qq.com',
-    'description' : '本人长期对互联网充满好奇，时刻的关注着互联网的最新动向，并从中了解到最新的相关知识。对Python的开发具有极大的热情，具有较好的Python的编程基础，熟悉常用的Python开源框架。',
+    '个人描述' : '本人长期对互联网充满好奇，时刻的关注着互联网的最新动向，并从中了解到最新的相关知识。对Python的开发具有极大的热情，具有较好的Python的编程基础，熟悉常用的Python开源框架。',
     'social_media' : [
         {
             'link': 'https://www.facebook.com/nono',
@@ -37,7 +37,7 @@ person = {
         }
     ],
     'img': 'img/img_nono.jpg',
-    'experiences' : [
+    '工作经验' : [
         {
             'title' : 'Web Developer',
             'company': 'AZULIK',
