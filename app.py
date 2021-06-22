@@ -11,20 +11,20 @@ import csv, re, operator
 app = Flask(__name__)
 
 person = {
-    'first_name': 'Nohossat',
-    'last_name' : 'TRAORE',
-    'address' : '9 rue Léon Giraud · PARIS · FRANCE',
-    'job': 'Web developer',
-    'tel': '0678282923',
-    'email': 'nohossat.tra@yahoo.com',
-    'description' : 'Suite à une expérience internationale en développement web et dans le domaine des arts, l’impact de l’intelligence artificielle dans nos vies me surprend de jour en jour. \n Aujourd’hui, je souhaite changer de cap et comprendre les secrets que recèlent nos données. J’aimerais mettre à profit ces découvertes au service des entreprises/associations à dimension sociale.',
+    'first_name': '科',
+    'last_name' : '宋',
+    'address' : '湖北师范大学黄石港区',
+    'job': '学生',
+    'tel': '13871876432',
+    'email': '2677726932@qq.com',
+    'description' : '本人长期对互联网充满好奇，时刻的关注着互联网的最新动向，并从中了解到最新的相关知识。对Python的开发具有极大的热情，具有较好的Python的编程基础，熟悉常用的Python开源框架。',
     'social_media' : [
         {
             'link': 'https://www.facebook.com/nono',
             'icon' : 'fa-facebook-f'
         },
         {
-            'link': 'https://github.com/nono',
+            'link': 'https://github.com/zhaikexingxing',
             'icon' : 'fa-github'
         },
         {
