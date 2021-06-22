@@ -39,22 +39,22 @@ person = {
     'img': 'img/img_nono.jpg',
     'experiences' : [
         {
-            'title' : 'Web Developer',
-            'company': 'AZULIK',
-            'description' : 'Project manager and lead developer for several AZULIK websites.',
-            'timeframe' : 'July 2018 - November 2019'
+            'title' : 'Python数据爬取',
+            'company': '阮氏有限责任公司',
+            'description' : '在此公司任职项目主管',
+            'timeframe' : '2018年9月 - 2021年10月'
         },
         {
-            'title' : 'Freelance Web Developer',
-            'company': 'Independant',
-            'description' : 'Create Wordpress websites for small and medium companies. ',
-            'timeframe' : 'February 2017 - Present'
+            'title' : '音乐软件开发',
+            'company': '宵氏有限责任公司',
+            'description' : '创建项目的框架 ',
+            'timeframe' : '2018年10月 - 现在'
         },
         {
-            'title' : 'Sharepoint Intern',
-            'company': 'ALTEN',
-            'description' : 'Help to manage a 600 Sharepoint sites platform (audit, migration to Sharepoint newer versions)',
-            'timeframe' : 'October 2015 - October 2016'
+            'title' : '分享线实习生',
+            'company': '王氏国际基建公司',
+            'description' : '帮助王氏管理600个分享线网站平台',
+            'timeframe' : '2019年5月 - 2021年12月'
         }
     ],
     'education' : [
