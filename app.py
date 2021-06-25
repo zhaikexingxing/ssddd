@@ -3,6 +3,8 @@ import pandas as pd
 import json
 import plotly
 import plotly.express as px
+import plotly as py
+import plotly.graph_objs as go
 
 import csv, re, operator
 
@@ -22,7 +24,7 @@ person = {
     'web3': 'sk',
     'introduce': '活泼开朗、乐观向上、兴趣广泛、适应力强、上手快、勤奋好学、脚踏实地、认真负责、坚毅不拔、吃苦耐劳、勇于迎接新挑战。',
     'description': '',
-    'hobby': '电子游戏 ',
+    'hobby': '电子游戏开发 ',
     'social_media': [
         {
             'link': 'https://www.facebook.com/nono',
@@ -104,24 +106,76 @@ person = {
 
 @app.route('/')
 def cv(person=person):
-    return render_template('resume.html', person=person)
+    return render_template('source.html', person=person)
 
 
 @app.route('/callback', methods=['POST', 'GET'])
 def cb():
     return gm(request.args.get('data'))
 
-
+# 链接一
 @app.route('/chart')
 def index():
-    return render_template('chartsajax.html', graphJSON=gm())
+    return render_template('chartsajax.html', graphJSON=gm(),graphJSON1=gm1(),graphJSON2=gm2(),graphJSON3=gm3(),graphJSON4=gm4())
+
+def gm():
+    data = pd.read_csv('tips.csv', encoding='utf-8')
+    fig=px.pie(data,values='total_bill',names='day')
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
+
+def gm1():
+    data = pd.read_csv('tips.csv', encoding='utf-8')
+    fig=px.histogram(data,x="total_bill",y="tip",color="time",marginal="rug",hover_data=data.columns)
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
+
+def gm2():
+    data = pd.read_csv('tips.csv', encoding='utf-8')
+    fig=px.bar(data,x="sex",y="tip",color="time",barmode="group")
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
+
+def gm3():
+    data = pd.read_csv('tips.csv', encoding='utf-8')
+    fig=px.parallel_categories(data,color="size",color_continuous_scale=px.colors.sequential.Inferno)
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
+
+def gm4():
+    data = pd.read_csv('tips.csv', encoding='utf-8')
+    fig=px.strip(data,x="total_bill",y="time",orientation="h",color="smoker")
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
 
 
-def gm(country='United Kingdom'):
-    df = pd.DataFrame(px.data.gapminder())
+# 链接二
+@app.route('/chart1')
+def index1():
+    return render_template('chartsajax1.html',graphJSON5=gm5(),graphJSON6=gm6(),graphJSON7=gm7(),graphJSON8=gm8())
 
-    fig = px.line(df[df['country'] == country], x="year", y="gdpPercap")
+def gm5():
+    data = pd.read_csv('Countries Population from 1995 to 2020.csv', encoding='utf-8')
+    fig=px.scatter(data,x='Urban Population',y='World Population',color='Country')
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
 
+def gm6():
+    data = pd.read_csv('Countries Population from 1995 to 2020.csv', encoding='utf-8')
+    fig=px.scatter(data,x='Yearly Change',y='Urban Population',color='Country',size="Population",size_max=60)
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
+
+def gm7():
+    data = pd.read_csv('Countries Population from 1995 to 2020.csv', encoding='utf-8')
+    fig=px.density_contour(data,x='Yearly Change',y='World Population',color='Country')
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
+
+
+def gm8():
+    data = pd.read_csv('Countries Population from 1995 to 2020.csv', encoding='utf-8')
+    fig=px.density_heatmap(data,x="Median Age",y="Country Global Rank",marginal_x="rug",marginal_y="histogram")
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     return graphJSON
 
@@ -179,7 +233,7 @@ def main():
 
     layout = {'title': '<b>意见挖掘</b>'}
 
-    return render_template('sentiment.html', graph_values=graph_values, layout=layout)
+    return render_template('source.html', graph_values=graph_values, layout=layout)
 
 
 if __name__ == '__main__':

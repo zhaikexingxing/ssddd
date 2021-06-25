@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function cb(selection) {
+            $.getJSON({
+                url: "/callback", data: { 'data': selection }, success: function (result) {
+                    Plotly.newPlot('chart', result, {});;
+                }
+            });
+        }
+    </script>
+
+
+
+</head>
+
+<body style="font-family:arial, sans-serif">
+    <h1>1995-2020年的各国人口可视化分析</h1>
+    <h2>散点图</h2>
+    <p>该散点图x轴坐标Urban Population(城市人口)y轴坐标为World Population(世界人口)，从图中可以看出China(中国)、India(印度)和Unite state(美国)人口的城市增长趋势在世界中增长较快,其中China(中国)增长趋势最快。</p>
+    <div id="chart5" class="chart"></div>
+    <h2>散点区域图</h2>
+    <p>该散点图x轴坐标Yearly Change(年度变化)y轴坐标为Urban Population(城市人口)，从图中的区域可以看出，China(中国)和India（印度）城市人口年度变化最大。</p>
+    <div id="chart6" class="chart"></div>
+    <h2>分布图</h2>
+    <p>该分布图x轴坐标Yearly Change(年度变化)y轴坐标为World Population(世界人口)，从图中可以看出China(中国)和India（印度）的Yearly Change(年增长)人口可以达到15M以上，其中中国可以达到20以上，其他国家不超过5M。</p>
+    <div id="chart7" class="chart"></div>
+    <h2>热力图</h2>
+    <p>该图为热力图，该分布图x轴坐标Median Age(中间年龄)y轴坐标为Country Global Rank(国家全球排名)，从图中可以看出Median Age(中间年龄)和Country Global Rank(国家全球排名)集中在15至20岁之间和80。</p>
+    <div id="chart8" class="chart"></div>
+
+</body>
+
+<script>
+    d = {{ graphJSON5 | safe }};
+    Plotly.newPlot('chart5', d, {});
+
+    d = {{ graphJSON6 | safe }};
+    Plotly.newPlot('chart6', d, {});
+
+    d = {{ graphJSON7 | safe }};
+    Plotly.newPlot('chart7', d, {});
+
+    d = {{ graphJSON8 | safe }};
+    Plotly.newPlot('chart8', d, {});
+
+</script>
+
+
+</html>
