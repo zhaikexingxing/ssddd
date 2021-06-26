@@ -116,7 +116,7 @@ def cb():
 # 链接一
 @app.route('/chart')
 def index():
-    return render_template('chartsajax.html', graphJSON=gm(),graphJSON1=gm1(),graphJSON2=gm2(),graphJSON3=gm3(),graphJSON4=gm4())
+    return render_template('chartsajax.html', graphJSON=gm(),graphJSON1=gm1(),graphJSON2=gm2(),graphJSON3=gm3(),graphJSON4=gm4(),graphJSON9=gm9())
 
 def gm():
     data = pd.read_csv('tips.csv', encoding='utf-8')
@@ -145,6 +145,12 @@ def gm3():
 def gm4():
     data = pd.read_csv('tips.csv', encoding='utf-8')
     fig=px.strip(data,x="total_bill",y="time",orientation="h",color="smoker")
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
+
+def gm9():
+    data = pd.read_csv('tips.csv', encoding='utf-8')
+    fig=px.violin(data,y="tip",x="sex",color="smoker",box=True,points="all",hover_data=data.columns)
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     return graphJSON
 
