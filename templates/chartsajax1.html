@@ -20,16 +20,36 @@
 
 <body style="font-family:arial, sans-serif">
     <h1>1995-2020年的各国人口可视化分析</h1>
-    <h2>散点图</h2>
+    <h1>1、数据描述</h1>
+    <h2>1.1、数据获取</h2>
+    <p>可视化神器Plotly Express中有许多数据集，本次数据分析的Countries Population from 1995 to 2020数据集就是其中之一。因此，在数据分析时，利用Plotly直接使用tips数据集。</p>
+    <h2>1.2、数据字段描述</h2>
+    <p>本样本数据集为Countries Population from 1995 to 2020(1995至2020年世界人口)数据集，共包含14个数据字段4196个样本，数据集中的中的每列用制表符分隔，其中的14个字段意思如下：</p>
+    <p>* Year(年份)</p>
+    <p>* Country(国家)</p>
+    <p>* Population(人口)</p>
+    <p>* Yearly % Change(年变化率)</p>
+    <p>* Yearly Change(年度变化)</p>
+    <p>* Migrants (net)(移民)</p>
+    <p>* Median Age(中位年龄)</p>
+    <p>* Fertility Rate(生育率)</p>
+    <p>* Density (P/Km)(人口密度（P/Km）)</p>
+    <p>* Urban Pop %(城市人口百分比)</p>
+    <p>* Urban Population(城市人口)</p>
+    <p>* Country's Share of World Pop %(占世界人口百分比)</p>
+    <p>* World Population(世界人口)</p>
+    <p>* Country Global Rank(国家全球排名)</p>
+    <h1>2、数据可视化分析</h1>
+    <h2>2.1、散点图</h2>
     <p>该散点图x轴坐标Urban Population(城市人口)y轴坐标为World Population(世界人口)，从图中可以看出China(中国)、India(印度)和Unite state(美国)人口的城市增长趋势在世界中增长较快,其中China(中国)增长趋势最快。</p>
     <div id="chart5" class="chart"></div>
-    <h2>散点区域图</h2>
+    <h2>2.2、散点区域图</h2>
     <p>该散点图x轴坐标Yearly Change(年度变化)y轴坐标为Urban Population(城市人口)，从图中的区域可以看出，China(中国)和India（印度）城市人口年度变化最大。</p>
     <div id="chart6" class="chart"></div>
-    <h2>分布图</h2>
+    <h2>2.3、分布图</h2>
     <p>该分布图x轴坐标Yearly Change(年度变化)y轴坐标为World Population(世界人口)，从图中可以看出China(中国)和India（印度）的Yearly Change(年增长)人口可以达到15M以上，其中中国可以达到20以上，其他国家不超过5M。</p>
     <div id="chart7" class="chart"></div>
-    <h2>热力图</h2>
+    <h2>2.4、热力图</h2>
     <p>该图为热力图，该分布图x轴坐标Median Age(中间年龄)y轴坐标为Country Global Rank(国家全球排名)，从图中可以看出Median Age(中间年龄)和Country Global Rank(国家全球排名)集中在15至20岁之间和80。</p>
     <div id="chart8" class="chart"></div>
 

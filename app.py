@@ -15,7 +15,10 @@ app = Flask(__name__)
 person = {
     'first_name': '宋',
     'last_name': '         科',
+    'country':'中国',
     'address': '湖北省黄石市黄石港区',
+    'birthday':'8月5日',
+    'hobby':'电子游戏开发',
     'tel': '1234568910',
     'email': '123321567@qq.com',
     'web': 'https://github.com',
@@ -23,7 +26,6 @@ person = {
     'web2': 'sk',
     'web3': 'sk',
     'introduce': '活泼开朗、乐观向上、兴趣广泛、适应力强、上手快、勤奋好学、脚踏实地、认真负责、坚毅不拔、吃苦耐劳、勇于迎接新挑战。',
-    'description': '',
     'hobby': '电子游戏开发 ',
     'social_media': [
         {
